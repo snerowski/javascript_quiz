@@ -1,3 +1,4 @@
+// Gets all of the DOM elements
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const questionsContainerEl = document.getElementById('questionsCon');
@@ -7,10 +8,10 @@ const scoreElement = document.getElementById('score');
 const timeElement = document.getElementById('time');
 const scoreText = document.getElementById('score');
 
-
+// Initializes the variables
 let shuffledQuestions, currentQuestionIndex = 0, timeLeft, score, timer;
 
-
+// Where all of the questions and answers for the quiz are stored
 const questions = [
   {
     question: 'What does the funtion skeleton look like?',
@@ -49,15 +50,15 @@ const questions = [
     ]
   }
 ];
-
+// Starts the quiz 
 startButton.addEventListener('click', startGame);
-
+// Goes to the next question, I kept breaking the code when I tried to get it to go to the next question after the user has selected an answer so i just settled for clicking next question
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
     nextQuestion();
 });
 
-// Timer
+// Timer starts once the quiz starts
 function startTimer(duration, display) {
   timeLeft = duration;
   timer = setInterval(function() {
@@ -104,6 +105,7 @@ function showQuestion(question) {
     answerButtonsElement.appendChild(button);
   });
 }
+// Once the user selects an answer if its correct it adds 10 points, if its incorrect it subtracts 10 seconds from the timer. If time runs out alert window appears and says game over
 function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
@@ -128,7 +130,7 @@ function selectAnswer(e) {
 
   
 
-
+// This function sets the class of the provided element based on whether the answer is correct or wrong.
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
@@ -138,23 +140,23 @@ function setStatusClass(element, correct) {
     }
   }
   
-
+// This function removes the 'correct' and 'wrong' classes from the provided element.
 function clearStatusClass(element) {
 element.classList.remove('correct');
 element.classList.remove('wrong');
 }
-
+// just shuffles the questions each time the quiz is taken 
 function shuffleQuestions(questions) {
 return questions.sort(() => Math.random() - 0.5);
 }
-
+// This function displays the next question in the shuffledQuestions array.
 function nextQuestion() {
     console.log('currentQuestionIndex:', currentQuestionIndex);
-
+// Hide the next button until an answer has been selected.
 showQuestion(shuffledQuestions[currentQuestionIndex]);
 nextButton.classList.add('hide');
 }
-
+// Starts the quiz when the page loads.
 startGame();
 
 
