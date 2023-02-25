@@ -13,39 +13,39 @@ let shuffledQuestions, currentQuestionIndex = 0, timeLeft, score, timer;
 
 const questions = [
   {
-    question: 'Which is a function?',
+    question: 'What does the funtion skeleton look like?',
     answers: [
-      { text: 'funcion()', correct: true },
+      { text: 'function()', correct: true },
       { text: 'method()', correct: false },
       { text: 'variable()', correct: false },
       { text: 'class()', correct: false }
     ]
   },
   {
-    question: 'Who made this test?',
+    question: 'What does getElementById do?',
     answers: [
-      { text: 'Reggie', correct: true },
-      { text: 'The professor', correct: false },
-      { text: 'Some rando on stack overflow', correct: false },
-      { text: 'Some student I paid', correct: false }
+      { text: 'Returns an object', correct: true },
+      { text: 'Creates a new element', correct: false },
+      { text: 'Finds your social security number', correct: false },
+      { text: 'All of the above', correct: false }
     ]
   },
   {
-    question: 'Best coffee?',
+    question: 'What is an add event listner?',
     answers: [
-      { text: 'Latte', correct: false },
-      { text: 'Black', correct: true },
-      { text: 'Espresso', correct: false },
-      { text: 'Mocha', correct: false }
+      { text: 'Sets up a function that will be called whenever the specified event is delivered to the target', correct: false },
+      { text: 'A fun event where you get to listen', correct: true },
+      { text: 'Something on spotify', correct: false },
+      { text: 'All of the above', correct: false }
     ]
   },
   {
-    question: 'Best Ice Cream?',
+    question: 'What do arrays do?',
     answers: [
-      { text: 'Chocolate', correct: false },
-      { text: 'Cookies and Cream', correct: true },
-      { text: 'Mint Chocolate Chip', correct: false },
-      { text: 'Strawberry', correct: false }
+      { text: 'Store multiple values in a single variable', correct: false },
+      { text: 'Makes a row', correct: true },
+      { text: 'Changes the users path', correct: false },
+      { text: 'All of the above', correct: false }
     ]
   }
 ];
